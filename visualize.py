@@ -20,10 +20,10 @@ results = "results.html"
 #
 # You can specify a random input salt to produce a different output.
 # This can be any string.
-salt = "Zke MA-Tag 20"
+salt = "Zke MA-Tag 2017"
 #
 # You can specify a blacklist of lines that shall not be displayed:
-blacklist = {"UPC Wi-Free"}
+blacklist = {"UPC Wi-Free","Free_Swisscom_Auto_Login","zOne","zLocal","znet","zred"}
 #
 # You can tune the HTML output:
 HTMLfontsize = 35

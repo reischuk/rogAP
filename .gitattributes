@@ -1,2 +1,4 @@
 * filter=openssl diff=openssl
 .gitattributes !filter !diff
+README.md !filter !diff
+

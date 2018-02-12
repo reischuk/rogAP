@@ -1,75 +1,55 @@
-# Copyright 2017: Raphael M. Reischuk
-#
-# 
-# This script converts the lines of a text file to an HTML output, where
-# each line gets an individual color and an individual position.
-#
-# Input text file:
-inputfile = "input.txt"
-# Output HTML file:
-results = "results.html"
-#
-#
-# Run this script from your shell:
-#
-#   while true; do python visualize.py; sleep 2; done
-#
-# and open the output file in your browser.
-#
-#
-#
-# You can specify a random input salt to produce a different output.
-# This can be any string.
-salt = "Zke MA-Tag 2017"
-#
-# You can specify a blacklist of lines that shall not be displayed:
-blacklist = {"UPC Wi-Free","Free_Swisscom_Auto_Login","zOne","zLocal","znet","zred"}
-#
-# You can tune the HTML output:
-HTMLfontsize = 35
-HTMLrefreshinterval = 2
-
-import os
-import md5
-import time
-
-# Read input file.
-f = open(inputfile, "r")
-lines = [line for line in f if line.strip()]
-f.close()
-
-# Create HTML output file.
-html = open(results, "w")
-html.write("<html>\n  <head>\n    <style type='text/css'>\n")
-html.write("      body {\n        font-family: sans-serif;\n      }\n")
-html.write("      span {\n        position: absolute;\n        z-index: 1;\n        display: block;\n        padding: 2px;\n        padding-left: 6px;\n        padding-right: 6px;\n        font-size: %dpx;\n        border-radius: 8px;\n        background: linear-gradient(#ffffff,#dddddd);\n      }\n" % HTMLfontsize)
-html.write("    </style>\n")
-html.write("    <meta http-equiv='refresh' content='%d'>\n" % HTMLrefreshinterval)
-html.write("  </head>\n\n")
-html.write("  <body>\n\n")
-html.write("    <img src='src/zke.png' style='z-index: 2;'>\n\n")
-
-# Fetch current time.
-curtime = (int)(time.time())
-
-# Produce individual outputs.
-for elem in set(lines):
-  elem = elem.strip(' \t\n\r')
-  if elem in blacklist: continue
-  hashval = md5.new(elem + salt).hexdigest()
-  hashnum = hashval.replace('a','').replace('b','').replace('c','').replace('d','').replace('e','').replace('f','')
-  color = hashval[:6]
-  movementX = (50 - (float)(hashnum[6:8])) / 400
-  movementY = (50 - (float)(hashnum[8:10])) / 400
-  posX = 0.95 * (((float)(hashnum[0:2]) + movementX * curtime) % 100)
-  posY = 0.95 * (((float)(hashnum[2:4]) + movementY * curtime) % 100)
-  rot = 0.05 * (int)(hashnum[4:6])
-  html.write("<span style='color: #%s; left: %.2f%%; top: %.2f%%; transform: rotate(%ddeg); border: none #%s;'>%s</span>\n" % (color,posX,posY,rot,color,elem))
-
-
-# Finalize HTML.
-html.write("\n  </body>\n</html>\n")
-html.close()
-
-# Status message.
-print "Successfully created file " + results + "."
+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
